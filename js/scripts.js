@@ -40,7 +40,13 @@ function setGameElements() {
             break;
         case "ended":
             newGameBtn.innerText = "Jeszcze raz";
+			playerPickElem.innerHTML = "Player selection";
+			computerPickElem.innerHTML = "Computer selection";
+			playerResultElem.innerHTML = "Player score";
+			computerResultElem.innerHTML = "Computer score";
+			
         case "notStarted":
+
         default:
             newGameElem.style.display = "block";
             pickElem.style.display = "none";
@@ -126,11 +132,10 @@ function endGame() {
         alert("You win!");
         gameState = "ended";
         setGameElements();
-        setGamePoints();
+		
     } else if (computer.score == 10) {
         alert("You loose!");
         gameState = "ended";
         setGameElements();
-        setGamePoints();
     }
 }
